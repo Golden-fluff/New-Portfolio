@@ -45,28 +45,6 @@ tabs.forEach((tab) => {
   });
 });
 
-// services box
-const boxViews = document.querySelectorAll(".services-box"),
-  boxBtns = document.querySelectorAll(".services-button"),
-  boxCloses = document.querySelectorAll(".services-box-close");
-
-let box = function (boxClick) {
-  boxViews[boxClick].classList.add("active-box");
-};
-
-boxBtns.forEach((boxBtn, i) => {
-  boxBtn.addEventListener("click", () => {
-    box(i);
-  });
-});
-
-boxCloses.forEach((boxClose) => {
-  boxClose.addEventListener("click", () => {
-    boxViews.forEach((boxView) => {
-      boxView.classList.remove("active-box");
-    });
-  });
-});
 
 //scroll section active link
 const sections = document.querySelectorAll("section[id]");
@@ -104,7 +82,7 @@ window.addEventListener("scroll", scrollHeader);
 /*==================== SHOW SCROLL TOP ====================*/
 function scrollUp() {
   const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+  // Lorsque le défilement est supérieur à 560 hauteur de fenêtre, ajoutez la classe show-scroll à la balise a avec la classe scroll-top
   if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
   else scrollUp.classList.remove("show-scroll");
 }
@@ -115,19 +93,23 @@ const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "fa-sun";
 
-// Previously selected topic (if user selected)
+// Sujet précédemment sélectionné (si l'utilisateur est sélectionné)
 const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
-// We obtain the current theme that the interface has by validating the dark-theme class
+// Définir le thème par défaut sur "dark" si aucun thème n'a été sélectionner précédemment
+if (!selectedTheme) {
+  document.body.classList.add(darkTheme);
+}
+// On obtient le thème actuel de l'interface en validant la classe dark-theme
 const getCurrentTheme = () =>
   document.body.classList.contains(darkTheme) ? "dark" : "light";
 const getCurrentIcon = () =>
   themeButton.classList.contains(iconTheme) ? "fa-moon" : "fa-sun";
 
-// We validate if the user previously chose a topic
+// Nous validons si l'utilisateur a préalablement choisi un sujet
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+  // Si la validation est remplie, nous demandons quel était le problème pour savoir si nous avons activé ou désactivé le dark
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
     darkTheme
   );
@@ -136,12 +118,12 @@ if (selectedTheme) {
   );
 }
 
-// Activate / deactivate the theme manually with the button
+// Activer/désactiver le thème manuellement avec le bouton
 themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
+  // Ajouter ou supprimer le thème sombre/icône
   document.body.classList.toggle(darkTheme);
   themeButton.classList.toggle(iconTheme);
-  // We save the theme and the current icon that the user chose
+  // Nous enregistrons le thème et l'icône actuelle que l'utilisateur a choisi
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
@@ -200,4 +182,18 @@ function filterItems(filter) {
       item.style.display = 'block';
     }
   });
+}
+
+
+function copyToClipboard() {
+  const codeContent = document.querySelector('.code-container pre code');
+  const textArea = document.createElement('textarea');
+  textArea.value = codeContent.textContent;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textArea);
+
+  // Ajoutez ici une logique pour afficher un message de confirmation ou mettre à jour le bouton
+  alert('Code copié dans le presse-papiers !');
 }
