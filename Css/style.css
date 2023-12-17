@@ -16,7 +16,8 @@
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
   --container-color: #fff;
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-bar-color: hsl(var(--hue-color),57%, 53% );
+  /* 12%, 90% */
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
   --body-font: "Poppins", sans-serif;
@@ -66,6 +67,7 @@ body.dark-theme {
   --input-color: hsl(var(--hue-color), 29%, 16%);
   --body-color: hsl(var(--hue-color), 28%, 12%);
   --container-color: hsl(var(--hue-color), 29%, 16%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   transition: 0.3s ease-in;
 }
 
@@ -599,7 +601,7 @@ img {
   padding-bottom: 5rem;
 }
 
-.services-container {
+#services-container {
   gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
   max-width: fit-content;
@@ -619,8 +621,8 @@ img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.item.services-content {
-}
+/* .item.services-content {
+} */
 
 .services-icon {
   display: block;
@@ -701,7 +703,7 @@ img {
   transition: .3s;
   z-index: 1;
   font-family: inherit;
-  color: white;
+  color: var(--scroll-bar-color);
 }
 
 .filter-button::before {
@@ -870,9 +872,9 @@ img {
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.footer-link {
-  test;
-}
+/* .footer-link {
+ 
+} */
 .footer-link:hover {
   color: var(--first-color-lighter);
 }
@@ -904,8 +906,6 @@ img {
   position: fixed;
   right: 1rem;
   bottom: -20%;
-  background-color: var(--first-color);
-  opacity: 0.8;
   padding: 0.2rem 0.4rem;
   border-radius: 0.4rem;
   z-index: var(--z-tooltip);
@@ -969,13 +969,9 @@ img {
     gap: 0.5rem;
   }
 
-  .services-container {
+  #services-container {
     grid-template-columns: max-content;
     justify-content: center;
-  }
-
-  .services-content {
-    /* padding-right: 3.5rem; */
   }
 
   .services-box {
@@ -1135,7 +1131,7 @@ img {
     grid-template-columns: 0.5fr;
   }
 
-  .services-container {
+  #services-container {
     grid-template-columns: repeat(3, 218px);
     justify-content: center;
   }
@@ -1210,7 +1206,7 @@ img {
     transform: translateX(-6rem);
   }
 
-  .services-container {
+  #services-container {
     grid-template-columns: repeat(3, 238px);
   }
 

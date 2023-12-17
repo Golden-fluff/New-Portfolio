@@ -197,3 +197,33 @@ function copyToClipboard() {
   // Ajoutez ici une logique pour afficher un message de confirmation ou mettre à jour le bouton
   alert('Code copié dans le presse-papiers !');
 }
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Sélectionnez le conteneur des cartes
+  var conteneurCartes = document.getElementById('services-container');
+
+  // Sélectionnez toutes les cartes avec la classe "carte"
+  var cartes = conteneurCartes.querySelectorAll('.services-content');
+
+  // Convertissez la NodeList en un tableau pour utiliser l'algorithme de Fisher-Yates
+  var cartesArray = Array.from(cartes);
+
+  // Fonction pour mélanger les cartes
+  function melangerCartes() {
+    for (var i = cartesArray.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      [cartesArray[i], cartesArray[j]] = [cartesArray[j], cartesArray[i]];
+    }
+
+    // Réinsérez les cartes dans le conteneur
+    cartesArray.forEach(function(carte) {
+      conteneurCartes.appendChild(carte);
+    });
+  }
+
+  // Appelez la fonction de mélange au chargement de la page
+  melangerCartes();
+});
