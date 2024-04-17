@@ -723,9 +723,6 @@ img {
  width: 105%;
 }
 
-.filter-button:hover {
- color: #111;
-}
 
 .filter-button.active {
   background-color: var(--first-color-alt);
