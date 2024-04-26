@@ -726,6 +726,7 @@ img {
 
 .filter-button.active {
   background-color: var(--first-color-alt);
+  color: var(--first-color-lighter);
 }
 
 /* projects  */
