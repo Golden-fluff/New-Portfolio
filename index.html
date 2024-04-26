@@ -55,7 +55,7 @@
           </li>
           <li class="nav-item">
             <a href="#services" class="nav-link">
-              Projets
+              Projets E4
             </a>
           </li>
           <li class="nav-item">
@@ -409,13 +409,13 @@
       <div class="project-bg">
         <div class="project-container container grid">
           <div class="project-data">
-            <h2 class="project-title">Mes tâches au quotidien</h2>
+            <h2 class="project-title">Mon quotidien en entreprise</h2>
             <ul class="project-list">
               <li><span>Réalisations de dépannages de niveau 1</span></li>
               <li><span>Confection de fichier Excel avancée</span></li>
               <li><span>Utilisation de l'Active Directory</span></li>
-              <li><span></span></li>
-              <li><span></span></li>
+              <li><span>Remplacement de postes fixes</span></li>
+              <li><span>Aide au tâches quotidiennes (excel, word, outlook, application métier)</span></li>
             </ul>
           </div>
           <img src="Assets/Icons/tasklist.png" alt="" class="project-img" />
@@ -424,10 +424,15 @@
     </section>
 
     <section class="services section" id="services">
-      <h2 class="section-title">Projets</h2>
-      <span class="section-subtitle"></span>
+      <h2 class="section-title" id="titre-checked"></h2>
+      <span class="section-subtitle">
+        <label class="switch">
+          <input type="checkbox" id="toggleButton">
+          <span class="slider round"></span>
+          <span id="buttonText">Off</span>
+      </label></span>
 
-      <div class="filter-section">
+      <div class="filter-section" id="filter-hidden">
         <button class="button button-small filter-button" data-filter="all">Toutes les compétences</button>
         <button class="button button-small filter-button" data-filter="GPI">Gérer le patrimoine <br>informatique</button>
         <button class="button button-small filter-button" data-filter="RIDAE">Répondre aux incidents <br>et aux demandes d’assistance <br>et d’évolution</button>
@@ -437,8 +442,41 @@
         <button class="button button-small filter-button" data-filter="ODP">Organiser <br>son développement <br>professionnel</button>
       </div>
 
+      <!-- Projets E5 -->
+    <div id="services-container-projet-e5" class="services-container container grid bloc-hidden">
+      <div id="projet-E5-1" class="item services-content">
+        <div>
+          <i class="fa-solid fa-hard-drive fa-bounce services-icon"></i>
+          <h3 class="services-title">
+            Mise en place d'un environnement collaboratif <br />
+            Nextcloud dans la zone démilitarisé (DMZ)
+          </h3>
+        </div>
+        <a class="button button-flex button-small button-link" target="_blank" href="https://florianbelliard.notion.site/Sauvegarde-et-Restauration-sur-un-serveur-externe-94b975e400d74d3ab9c77df4b4ba4311?pvs=4">
+          Voir plus
+          <i class="fa-solid fa-arrow-right button-icon"></i>
+        </a>
+      </div>
 
-      <div id="services-container" class="services-container container grid">
+      <div class="item services-content">
+        <div>
+          <i class="fa-solid fa-eye-low-vision fa-bounce services-icon"></i>
+
+          <h3 class="services-title">
+            Etude et mise en place <br />
+            d'une solution de supervision (Zabbix) + Grafana
+          </h3>
+        </div>
+        <a class="button button-flex button-small button-link" target="_blank" href="https://florianbelliard.notion.site/Etude-et-mise-en-place-d-une-solution-de-supervision-Zabbix-8f35ed7b515549898d1011e5b8c8ce76?pvs=4">
+          Voir plus
+          <i class="fa-solid fa-arrow-right button-icon"></i>
+        </a>
+      </div>
+    </div>
+
+      <!-- Fin Projet E5 -->
+
+      <div id="services-container" class="services-container container grid hidden">
         <!-- service 1  -->
         <div class="item services-content GPI TMP MDUSI">
           <div>
@@ -456,7 +494,7 @@
         </div>
 
         <!-- service 2  -->
-        <div class="item services-content GPI MDUSI">
+        <div id="projet-E5-1" class="item services-content GPI MDUSI">
           <div>
             <i class="fa-solid fa-hard-drive fa-bounce services-icon"></i>
             <h3 class="services-title">

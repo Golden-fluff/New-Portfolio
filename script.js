@@ -227,3 +227,30 @@ document.addEventListener("DOMContentLoaded", function() {
   // Appelez la fonction de mélange au chargement de la page
   melangerCartes();
 });
+
+
+
+const toggleButton = document.getElementById('toggleButton');
+const titleText = document.getElementById('titre-checked');
+const bloc1 = document.getElementById('filter-hidden');
+const bloc2 = document.getElementById('services-container');
+const bloc3 = document.getElementById('services-container-projet-e5')
+// const bloc4 = document.getElementById('projet-E5-2')
+
+titleText.textContent = 'Projets E4';
+
+toggleButton.addEventListener('change', function() {
+  if (this.checked) {
+    titleText.textContent = 'Projets E5';
+    bloc1.classList.add('bloc-hidden');
+    bloc2.classList.add('bloc-hidden');
+    bloc3.classList.remove('bloc-hidden')
+    // bloc4.classList.remove('bloc-hidden')
+  } else {
+    titleText.textContent = 'Projets E4';
+    bloc1.classList.remove('bloc-hidden');
+    bloc2.classList.remove('bloc-hidden');
+    bloc3.classList.add('bloc-hidden')
+    // bloc4.classList.add('bloc-hidden')
+  }
+});
