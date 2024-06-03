@@ -729,6 +729,10 @@ img {
   color: var(--first-color-lighter);
 }
 
+#tab-synthèse{
+  justify-content: center;
+}
+
 /* projects  */
 .portfolio-container {
   overflow: initial;
